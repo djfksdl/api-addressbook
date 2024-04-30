@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.javaex.vo.AddressVo;
 
 @Repository
-public class YsDao {
+public class YSDao {
 	
 	@Autowired
 	private SqlSession sqlSession;
