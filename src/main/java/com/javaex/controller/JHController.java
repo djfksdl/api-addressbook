@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class JHController {
 	
-	@GetMapping("/api/jh")
+	@GetMapping("/api/js")
 	public void getList() {
 		System.out.println("JHController.getList");
 	}
