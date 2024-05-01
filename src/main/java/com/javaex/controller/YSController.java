@@ -17,7 +17,7 @@ public class YSController {
 	private YSService ysService;
 	
 	@GetMapping("/api/ysGetList")
-	public JsonResult getList() {
+	public JsonResult ysgetList() {
 		System.out.println("YSController.getList");
 		
 		List<AddressVo> ysList =ysService.exeList();
