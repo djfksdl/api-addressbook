@@ -24,4 +24,13 @@ public class AYService {
 		
 	}
 	
+	public AddressVo exeAddressList(int cNo) {
+		System.out.println("AYService.exeList");
+		
+		AddressVo addressVo=ayDao.addressSelectOne(cNo);
+		
+		return addressVo;
+		
+	}
+	
 }

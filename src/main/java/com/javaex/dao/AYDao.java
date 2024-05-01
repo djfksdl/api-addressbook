@@ -18,7 +18,16 @@ public class AYDao {
 			System.out.println("AYDao.selectList");
 			
 			List<AddressVo> addressList = sqlSession.selectList("aybook.selectList");
-			
 			return addressList;
 		}
+		
+		
+		public AddressVo addressSelectOne(int cNo) {
+			System.out.println("AYDao.addressSelectOne");
+			
+			AddressVo addressVo = sqlSession.selectOne("aybook.selectOne",cNo);
+			
+			return addressVo;
+		}
+		
 }
