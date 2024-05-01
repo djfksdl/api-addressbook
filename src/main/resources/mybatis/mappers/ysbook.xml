@@ -9,6 +9,7 @@
 		select aNo
 			  ,name
 		from address
+		where favorite=1
 	]]>
 	</select>
 
