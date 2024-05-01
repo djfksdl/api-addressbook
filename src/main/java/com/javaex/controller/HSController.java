@@ -19,13 +19,12 @@ public class HSController {
 	
 	//한명 선택하기(상세정보)
 	@GetMapping("/api/hsdetail/{aNo}")
-	public void getDetail(@PathVariable(value="aNo") int aNo) {
+	public JsonResult getDetail(@PathVariable(value="aNo") int aNo) {
 		System.out.println("HSController.getDetail()");
 		
-		System.out.println(aNo);
-		
-		hsService.getDetail(aNo);
+		AddressVo addressVo = hsService.getDetail(aNo);
 
+		return JsonResult.success(addressVo);
 	}
 	
 	//리스트 불러오기

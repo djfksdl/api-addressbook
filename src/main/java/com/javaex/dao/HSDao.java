@@ -16,11 +16,12 @@ public class HSDao {
 	
 	
 	//
-	public void selectAddress(int aNo) {
+	public AddressVo selectAddress(int aNo) {
 		System.out.println("HSDao.selectAddress()");
 		
 		AddressVo addressVo = sqlSession.selectOne("hsbook.selectOneAddress", aNo);
-		System.out.println(addressVo);
+		
+		return addressVo;
 	}
 	
 	//리스트
