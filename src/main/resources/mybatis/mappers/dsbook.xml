@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dsbook">
+
+	<!-- 수정폼 - 그룹 1개 데이터 가져오기 -->
+	<select id="selectOneGroup" parameterType="com.javaex.vo.AddressVo" resultType="com.javaex.vo.AddressVo">
+		<![CDATA[
+			select  cNo,
+					cName
+			from category
+			where cNo=#{cNo}
+		]]>
+	</select>
+
+	<!-- 수정 -->
+	<update id="update" parameterType="com.javaex.vo.AddressVo">
+		<![CDATA[
+			update category
+			set	cName=#{cName}
+			where cNo=#{cNo}
+		]]>
+	</update>
+
+</mapper>
