@@ -14,6 +14,16 @@ public class HSService {
 	@Autowired
 	private HSDao hsDao;
 	
+	
+	//연락처 삭제
+	public int addressDelete(int aNo) {
+		System.out.println("HSService.addressDelete()");
+		
+		int count = hsDao.addressDelete(aNo);
+		
+		return count;
+	}
+	
 	//한 명 선택 상세정보
 	public AddressVo getDetail(int aNo) {
 		System.out.println("HSService.getDetail()");

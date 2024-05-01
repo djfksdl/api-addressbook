@@ -15,7 +15,16 @@ public class HSDao {
 	private SqlSession sqlSession;
 	
 	
-	//
+	//연락처 삭제
+	public int addressDelete(int aNo) {
+		System.out.println("HSDao.addressDelete()");
+		
+		int count = sqlSession.delete("hsbook.deleteAddress", aNo);
+		
+		return count;
+	}
+	
+	//상세정보 불러오기
 	public AddressVo selectAddress(int aNo) {
 		System.out.println("HSDao.selectAddress()");
 		
