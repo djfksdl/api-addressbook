@@ -3,7 +3,7 @@
 <mapper namespace="dsbook">
 
 	<!-- 수정폼 - 그룹 1개 데이터 가져오기 -->
-	<select id="selectOneGroup" parameterType="com.javaex.vo.AddressVo" resultType="com.javaex.vo.AddressVo">
+	<select id="selectOneGroup" parameterType="int" resultType="com.javaex.vo.AddressVo">
 		<![CDATA[
 			select  cNo,
 					cName

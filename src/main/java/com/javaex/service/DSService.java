@@ -13,24 +13,26 @@ public class DSService {
 	private DSDao dsDao;
 	
 	//수정폼 - 1개 데이터 가져오기
-	public AddressVo exeEditForm(int no) {
+	public AddressVo exeEditForm(int cNo) {
 		System.out.println("DSService.exeEditForm()");
 		
-		System.out.println(no);
+		System.out.println("---------서비스 앞--------"+cNo);
 		
-		AddressVo aVo=dsDao.selectOneGroup(no);
+		AddressVo aVo=dsDao.selectOneGroup(cNo);
+
+		System.out.println("---------서비스 뒤--------"+aVo);
 		
 		return aVo;
 	}
 	
 	//수정
-//	public int exeEdit(AddressVo aVo) {
-//		System.out.println("DSService.exeEdit()");
-//		
-//		int count=dsDao.updateGroupName(aVo);
-//		System.out.println(aVo);
-//		
-//		return count;
-//	}
+	public int exeEdit(AddressVo aVo) {
+		System.out.println("DSService.exeEdit()");
+		
+		int count=dsDao.updateGroupName(aVo);
+		System.out.println("service= "+aVo);
+		
+		return count;
+	}
 
 }

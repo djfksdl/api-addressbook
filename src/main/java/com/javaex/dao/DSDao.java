@@ -13,26 +13,26 @@ public class DSDao {
 	private SqlSession sqlSession;
 	
 	//수정폼 - 1개 데이터 가져오기
-	public AddressVo selectOneGroup(int no) {
+	public AddressVo selectOneGroup(int cNo) {
 		System.out.println("DSDao.selectOneGroup()");
+
+		System.out.println("---------다오 앞--------"+cNo);
 		
-		System.out.println(no);
+		AddressVo aVo=sqlSession.selectOne("dsbook.selectOneGroup", cNo);
 		
-		AddressVo aVo=sqlSession.selectOne("dsbook.selectOneGroup", no);
-		
-		System.out.println(aVo);
+		System.out.println("---------다오 뒤--------"+aVo);
 		
 		return aVo;
 	}
 	
 	//수정
-//	public int updateGroupName(AddressVo aVo) {
-//		System.out.println("DSDao.groupNameUpdate()");
-//		
-//		int count=sqlSession.update("dsbook.update", aVo);
-//		System.out.println(count);
-//		
-//		return count;
-//	}
+	public int updateGroupName(AddressVo aVo) {
+		System.out.println("DSDao.groupNameUpdate()");
+		
+		int count=sqlSession.update("dsbook.update", aVo);
+		System.out.println("dao= "+count);
+		
+		return count;
+	}
 
 }
