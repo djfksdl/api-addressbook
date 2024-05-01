@@ -14,6 +14,7 @@ public class YSDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
+	//즐겨찾기 리스트 불러오기
 	public List<AddressVo> getList() {
 		System.out.println("YSDao.getList");
 		

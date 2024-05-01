@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.javaex.service.YSService;
@@ -16,15 +17,26 @@ public class YSController {
 	@Autowired
 	private YSService ysService;
 	
+	//즐겨찾기 리스트 불러오기
 	@GetMapping("/api/ysGetList")
 	public JsonResult ysgetList() {
-		System.out.println("YSController.getList");
+		System.out.println("YSController.ysgetList");
 		
 		List<AddressVo> ysList =ysService.exeList();
 		
 		System.out.println(ysList);
 		return JsonResult.success(ysList);
+	}
+	
+	//수정폼- 한사람 정보 가져오기
+	@GetMapping("/api/ysGetVo/{aNo}")
+	public JsonResult ysGetVoByaNo(@PathVariable(value = "aNo")int aNo) {
+		System.out.println("YSController.ysGetVoByaNo");
 		
+		System.out.println("찍혀야함"+aNo);
 		
+		ysService.exeVo();
+		
+		return JsonResult.success("야호");
 	}
 }

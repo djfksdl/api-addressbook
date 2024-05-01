@@ -14,12 +14,18 @@ public class YSService {
 	@Autowired
 	private YSDao ysDao;
 	
-	//수정폼 리스트 불러오기
+	//즐겨찾기 리스트 불러오기
 	public List<AddressVo> exeList() {
 		System.out.println("YSService.exeList");
 		
 		List<AddressVo> ysList =ysDao.getList();
 		
 		return ysList;
+	}
+	
+	//수정폼- 한사람 정보 가져오기
+	public void exeVo() {
+		System.out.println("YSService.exeVo");
+		
 	}
 }
