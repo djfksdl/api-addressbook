@@ -18,6 +18,18 @@ public class AddressVo {
 	public AddressVo() {
 		super();
 	}
+	
+	public AddressVo(int aNo, String name, String hp, int gender, String email, String memo,
+			boolean favorite) {
+		super();
+		this.aNo = aNo;
+		this.name = name;
+		this.hp = hp;
+		this.gender = gender;
+		this.email = email;
+		this.memo = memo;
+		this.favorite = favorite;
+	}
 
 	public AddressVo(int aNo, int cNo, int acNo, String name, String hp, int gender, String email, String memo,
 			boolean favorite, String cName) {
