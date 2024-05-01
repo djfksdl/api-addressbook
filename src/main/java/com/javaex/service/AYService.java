@@ -24,12 +24,12 @@ public class AYService {
 		
 	}
 	
-	public AddressVo exeAddressList(int cNo) {
+	public List<AddressVo> exeAddressList(int cNo) {
 		System.out.println("AYService.exeList");
 		
-		AddressVo addressVo=ayDao.addressSelectOne(cNo);
+		List<AddressVo> addressList=ayDao.addressSelect(cNo);
 		
-		return addressVo;
+		return addressList;
 		
 	}
 	

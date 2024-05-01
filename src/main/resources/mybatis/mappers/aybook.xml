@@ -10,13 +10,13 @@
 	]]>
 	</select>
 	
-	<select id="selectOne" parameterType="int" resultType="com.javaex.vo.AddressVo">
+	<select id="selectList2" parameterType="int" resultType="com.javaex.vo.AddressVo">
 		<![CDATA[
-			select ac.aNo,ac.cNo,a.aNo,a.name,c.cNo, cName
+			select ac.aNo, ac.cNo, a.aNo, a.name, c.cNo, c.cName
 			from address_category ac
 			join category c on ac.cNo=c.cNo
 			join address a on ac.aNo=a.aNo
-			where not a.aNo=0 and c.cNo=#{cNo}
+			where not a.aNo=0 and c.cNo=#{c.cNo}
 		]]>
 
 	</select>

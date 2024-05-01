@@ -22,12 +22,12 @@ public class AYDao {
 		}
 		
 		
-		public AddressVo addressSelectOne(int cNo) {
+		public List<AddressVo> addressSelect(int cNo) {
 			System.out.println("AYDao.addressSelectOne");
 			
-			AddressVo addressVo = sqlSession.selectOne("aybook.selectOne",cNo);
-			
-			return addressVo;
+			List<AddressVo> addressList = sqlSession.selectList("aybook.selectList2",cNo);
+			System.out.println(addressList);
+			return addressList;
 		}
 		
 }

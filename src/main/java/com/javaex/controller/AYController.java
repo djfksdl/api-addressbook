@@ -28,12 +28,13 @@ public class AYController {
 		return JsonResult.success(addressList);
 	}
 	
+	
 	@GetMapping("/api/ayList/{cNo}")
 	public JsonResult getAddressList(@PathVariable(value="cNo") int cNo) {
 		System.out.println("AYController.getAddressList");
 		
-		AddressVo addressVo= ayService.exeAddressList(cNo);
+		List<AddressVo> addressList= ayService.exeAddressList(cNo);
 		
-		return JsonResult.success(addressVo);
+		return JsonResult.success(addressList);
 	}
 }
