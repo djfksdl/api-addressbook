@@ -16,7 +16,7 @@ public class YSController {
 	@Autowired
 	private YSService ysService;
 	
-	@GetMapping("/api/ys")
+	@GetMapping("/api/ysGetList")
 	public JsonResult getList() {
 		System.out.println("YSController.getList");
 		
