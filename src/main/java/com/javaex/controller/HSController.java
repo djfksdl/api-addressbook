@@ -1,10 +1,14 @@
 package com.javaex.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.javaex.service.HSService;
+import com.javaex.util.JsonResult;
+import com.javaex.vo.AddressVo;
 
 @RestController
 public class HSController {
@@ -17,10 +21,13 @@ public class HSController {
 	
 	//리스트 불러오기
 	@GetMapping("/api/hs")
-	public void getList() {
+	public JsonResult getList() {
 		System.out.println("HSController.getList");
 		
 		//서비스(aNo, name, gender)
-		hsService.getList();
+		List<AddressVo> hsList = hsService.getList();
+		System.out.println(hsList);
+		
+		return JsonResult.success(hsList);
 	}
 }
