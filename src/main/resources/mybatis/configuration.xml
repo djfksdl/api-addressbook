@@ -8,5 +8,6 @@
 		<mapper resource="mybatis/mappers/jhbook.xml" />
 		<mapper resource="mybatis/mappers/aybook.xml" />
 		<mapper resource="mybatis/mappers/hsbook.xml" />
+		<mapper resource="mybatis/mappers/dsbook.xml" />
 	</mappers>
 </configuration>

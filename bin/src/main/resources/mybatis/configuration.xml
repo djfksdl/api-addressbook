@@ -4,6 +4,7 @@
 	<typeAliases>
 	</typeAliases>
 	<mappers>
-		<mapper resource="mybatis/mappers/ysbook.xml" /> 
+		<mapper resource="mybatis/mappers/ysbook.xml" />
+		<mapper resource="mybatis/mappers/jhbook.xml" />
 	</mappers>
 </configuration>
