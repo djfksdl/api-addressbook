@@ -19,7 +19,8 @@ public class HSDao {
 	public void selectAddress(int aNo) {
 		System.out.println("HSDao.selectAddress()");
 		
-		sqlSession.selectOne("hsbook.selectOneAddress", aNo);
+		AddressVo addressVo = sqlSession.selectOne("hsbook.selectOneAddress", aNo);
+		System.out.println(addressVo);
 	}
 	
 	//리스트

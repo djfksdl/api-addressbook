@@ -14,7 +14,7 @@
 		        memo,
 		        favorite
 		from address
-		where aNo = #{aNo};
+		where aNo = #{aNo}
 	]]>
 	</select>
 
