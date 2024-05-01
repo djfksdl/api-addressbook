@@ -14,13 +14,21 @@ public class JHDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public List<AddressVo> getList2() {
-		System.out.println("YSDao.getList");
+	public List<AddressVo> PersonGroupList() {
+		System.out.println("JHDao.PersonGroupList");
 		
-		List<AddressVo> ysList = sqlSession.selectList("jhbook.selectList2");
+		List<AddressVo> persongroupList = sqlSession.selectList("jhbook.selectpersongroupList");
 		
-		return ysList;
-		
+		return persongroupList;
 		
 	}
+	
+	public int PersonGroupsinsert(AddressVo addressVo) {
+		System.out.println("JHDao.PersonGroupsinsert");
+		
+		int count = sqlSession.insert("jhbook.insertpersongroup", addressVo);
+		
+		return count;
+	}
+	
 }

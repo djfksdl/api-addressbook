@@ -14,12 +14,21 @@ public class JHService {
 	@Autowired
 	private JHDao jhDao;
 	
-	public List<AddressVo> exeList2() {
-		System.out.println("YSService.exeList");
+	public List<AddressVo> exepersoninsertgruoptList() {
+		System.out.println("JHService.exepersoninsertgruoptList");
 		
-		List<AddressVo> ysList =jhDao.getList2();
 		
-		return ysList;
+		List<AddressVo> persongroupList =jhDao.PersonGroupList();
+		
+		return persongroupList;
+	}
+	
+	public int exePersongroupinsert(AddressVo addressVo) {
+		System.out.println("JHService.exePersongroupinsert");
+		
+		int count = jhDao.PersonGroupsinsert(addressVo);
+		
+		return count;
 	}
 	
 }

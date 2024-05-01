@@ -4,12 +4,19 @@
 
 
 	<!-- 즐겨찾기 리스트 불러오기 -->
-	<select id="selectList2" resultType="com.javaex.vo.AddressVo">
-	<![CDATA[
-		select aNo
-			  ,name
-		from address
-	]]>
+	<select id="selectpersongroupList" resultType="com.javaex.vo.AddressVo">
+		<![CDATA[
+			select cNo
+				  ,cName
+			from category
+		]]>
 	</select>
+	
+	<insert id="insertpersongroup" parameterType="com.javaex.vo.AddressVo">
+		<![CDATA[
+			INSERT INTO address_category
+			VALUES (null,#{aNo},#{cNo})
+		]]>
+	</insert>
 
 </mapper>
