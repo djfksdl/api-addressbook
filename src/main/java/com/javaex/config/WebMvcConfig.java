@@ -12,9 +12,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		registry.addMapping("/api/**") // 경로- 요청주소가 api로 시작해야한다.는 뜻
 				.allowedMethods("GET", "POST", "PUT", "DELETE")
 				.allowedOrigins("*")//visual에 있는 서버랑 동일해야함.
-				.allowedHeaders("*") // 모든 요청해더
-				.exposedHeaders("Authorization")// 노출시킬 헤더
-				.allowCredentials(true); // 쿠키허용
+				.allowedHeaders("*"); // 모든 요청해더
+//				.exposedHeaders("Authorization")// 노출시킬 헤더
+//				.allowCredentials(true); // 쿠키허용
 
 	}
 	
