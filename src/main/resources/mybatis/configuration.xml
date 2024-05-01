@@ -7,5 +7,6 @@
 		<mapper resource="mybatis/mappers/ysbook.xml" />
 		<mapper resource="mybatis/mappers/jhbook.xml" />
 		<mapper resource="mybatis/mappers/aybook.xml" />
+		<mapper resource="mybatis/mappers/hsbook.xml" />
 	</mappers>
 </configuration>
