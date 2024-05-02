@@ -44,5 +44,14 @@ public class HSService {
 		
 		return hsList;
 	}
+	
+	// 수정
+	public int exeModify(AddressVo addressVo) {
+		System.out.println("HSService.exeModify()");
+
+		int count = hsDao.favoriteUpdate(addressVo);
+
+		return count;
+	}
 
 }

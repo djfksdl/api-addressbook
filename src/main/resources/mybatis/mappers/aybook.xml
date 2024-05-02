@@ -17,6 +17,7 @@
 			join category c on ac.cNo=c.cNo
 			join address a on ac.aNo=a.aNo
 			where not a.aNo=0 and c.cNo=#{c.cNo}
+			order by name asc
 		]]>
 
 	</select>

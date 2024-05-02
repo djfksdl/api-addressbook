@@ -50,5 +50,14 @@ public class HSDao {
 		
 		return hsList;
 	}
+	
+	// 수정
+	public int favoriteUpdate(AddressVo addressVo) {
+		System.out.println("HSDao.favoriteUpdate()");
+
+		int count = sqlSession.update("hsbook.update", addressVo);
+
+		return count;
+	}
 
 }

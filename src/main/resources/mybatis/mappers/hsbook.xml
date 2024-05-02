@@ -47,5 +47,13 @@
 		from address
 	]]>
 	</select>
+	
+	<update id="update" parameterType="com.javaex.vo.AddressVo">
+	<![CDATA[
+		update address set favorite=#{favorite} where aNo=#{aNo}
+	]]>
+	</update>
+	
+	
 
 </mapper>

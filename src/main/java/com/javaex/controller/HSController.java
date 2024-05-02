@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.javaex.service.HSService;
@@ -49,5 +52,17 @@ public class HSController {
 		System.out.println(hsList);
 		
 		return JsonResult.success(hsList);
+	}
+	
+	
+	// 수정
+	@PutMapping(value = "/api/hsModify")
+	public JsonResult modify(@RequestBody AddressVo addressVo) {
+		System.out.println("HSController.modify");
+		System.out.println("즐겨찾기하자`~~~~");
+		System.out.println(addressVo);
+		int count = hsService.exeModify(addressVo);
+
+		return JsonResult.success(count);
 	}
 }
