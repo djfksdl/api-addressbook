@@ -24,6 +24,15 @@ public class HSDao {
 		return count;
 	}
 	
+//	//그룹 불러오기
+//	public List<AddressVo> selectGroup(int aNo) {
+//		System.out.println("HSDao.selectGroup()");
+//		
+//		List<AddressVo> gList = sqlSession.selectList("hsbook.selectGroup", aNo);
+//		
+//		return gList;
+//	}
+	
 	//상세정보 불러오기
 	public AddressVo selectAddress(int aNo) {
 		System.out.println("HSDao.selectAddress()");

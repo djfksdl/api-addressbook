@@ -11,7 +11,19 @@
 		]]>
 	</delete>
 
-	<!-- 상세정보 address 테이블 불러오기 -->
+	<!-- 상세정보 그룹 불러오기 -->
+	<select id="selectGroup" parameterType="int" resultType="com.javaex.vo.AddressVo">
+	<![CDATA[
+		select  ac.acNo,
+				ac.aNo,
+				ac.cNo,
+				c.cName
+		from address_category ac join category c
+		where ac.cNo = c.cNo and aNo = #{aNo}
+	]]>
+	</select>
+
+	<!-- 상세정보 address 불러오기 -->
 	<select id="selectOneAddress" parameterType="int" resultType="com.javaex.vo.AddressVo">
 	<![CDATA[
 		select  aNo,

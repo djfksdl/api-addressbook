@@ -31,9 +31,6 @@ public class HSService {
 		//(aNo, cNo, acNo, name, hp, gender, email, memo, favorite, cName)
 		// 1. 주소에 있는 정보 모두 가져오기
 		AddressVo addressVo = hsDao.selectAddress(aNo);
-		// 2. aNo로 address-category에서 리스트 가져오기 cNo만 선택
-		// 3. 카테고리 전체 리스트 불러오기
-		// 4. 
 		
 		return addressVo;
 	}
