@@ -16,11 +16,11 @@ public class DSDao {
 	public AddressVo selectOneGroup(int cNo) {
 		System.out.println("DSDao.selectOneGroup()");
 
-		System.out.println("---------다오 앞--------"+cNo);
+//		System.out.println("---------다오 앞--------"+cNo);
 		
 		AddressVo aVo=sqlSession.selectOne("dsbook.selectOneGroup", cNo);
 		
-		System.out.println("---------다오 뒤--------"+aVo);
+//		System.out.println("---------다오 뒤--------"+aVo);
 		
 		return aVo;
 	}
@@ -30,7 +30,8 @@ public class DSDao {
 		System.out.println("DSDao.groupNameUpdate()");
 		
 		int count=sqlSession.update("dsbook.update", aVo);
-		System.out.println("dao= "+count);
+		
+//		System.out.println("dao= "+count);
 		
 		return count;
 	}

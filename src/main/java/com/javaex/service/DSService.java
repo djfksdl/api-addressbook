@@ -16,11 +16,11 @@ public class DSService {
 	public AddressVo exeEditForm(int cNo) {
 		System.out.println("DSService.exeEditForm()");
 		
-		System.out.println("---------서비스 앞--------"+cNo);
+//		System.out.println("---------서비스 앞--------"+cNo);
 		
 		AddressVo aVo=dsDao.selectOneGroup(cNo);
 
-		System.out.println("---------서비스 뒤--------"+aVo);
+//		System.out.println("---------서비스 뒤--------"+aVo);
 		
 		return aVo;
 	}
@@ -30,7 +30,8 @@ public class DSService {
 		System.out.println("DSService.exeEdit()");
 		
 		int count=dsDao.updateGroupName(aVo);
-		System.out.println("service= "+aVo);
+		
+//		System.out.println("service= "+aVo);
 		
 		return count;
 	}

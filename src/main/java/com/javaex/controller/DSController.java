@@ -22,11 +22,11 @@ public class DSController {
 	public JsonResult groupEditForm(@PathVariable(value="cNo") int cNo) {
 		System.out.println("DSController.groupEditForm()");
 		
-		System.out.println("---------컨트롤러 앞--------"+cNo);
+//		System.out.println("---------컨트롤러 앞--------"+cNo);
 		
 		AddressVo aVo=dsService.exeEditForm(cNo);
 		
-		System.out.println("---------컨트롤러 뒤--------"+aVo);
+//		System.out.println("---------컨트롤러 뒤--------"+aVo);
 		
 		return JsonResult.success(aVo);
 	}
@@ -39,7 +39,7 @@ public class DSController {
 		
 		aVo.setcNo(cNo);
 		
-		System.out.println("num= "+cNo);
+//		System.out.println("num= "+cNo);
 		
 		int count=dsService.exeEdit(aVo);
 		
@@ -47,8 +47,8 @@ public class DSController {
 	}
 	
 	//테스트
-	@GetMapping("/api/ds")
-	public void getList() {
-		System.out.println("DSController.getList");
-	}
+//	@GetMapping("/api/ds")
+//	public void getList() {
+//		System.out.println("DSController.getList");
+//	}
 }
