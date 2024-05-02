@@ -30,4 +30,12 @@ public class AYDao {
 			return addressList;
 		}
 		
+		public int categoryInsert(String cName) {
+			System.out.println("AYDao.categoryInsert");
+			
+			int count=sqlSession.insert("aybook.insert",cName);
+			
+			return count;
+		}
+		
 }

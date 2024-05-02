@@ -21,4 +21,12 @@
 
 	</select>
 	
+	<insert id="insert" parameterType="String" >
+		<![CDATA[
+			insert into category
+			values(null, #{cName})
+		]]>
+
+	</insert>
+	
 </mapper>

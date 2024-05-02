@@ -33,4 +33,12 @@ public class AYService {
 		
 	}
 	
+	public int exeInsert(String cName) {
+		System.out.println("AYService.exeInsert");
+		
+		int count = ayDao.categoryInsert(cName);
+		
+		return count;
+	}
+	
 }
