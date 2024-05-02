@@ -36,6 +36,20 @@ public class YSService {
 	//수정하기
 	public void exeUpdate(AddressVo addressVo) {
 		System.out.println("YSService.exeUpdate");
+		
+		//수정하기-address table
 		ysDao.updateAll(addressVo);
+		
+		//수정하기-그룹리스트
+		if(addressVo.getGroupNoList().length <= 0) {
+			addressVo.setcNo(0);
+			ysDao.categoryGroupAllList(addressVo);
+			
+		}else {
+			for(int i = 0; i < addressVo.getGroupNoList().length; i++) {
+				addressVo.setcNo(addressVo.getGroupNoList()[i]);
+				ysDao.categoryGroupAllList(addressVo);
+			}
+		}
 	}
 }

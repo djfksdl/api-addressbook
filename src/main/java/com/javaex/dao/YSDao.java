@@ -33,11 +33,21 @@ public class YSDao {
 		return mgList;
 	}
 	
-	//수정하기
+	//수정하기-address table
 	public void updateAll(AddressVo addressVo) {
-		System.out.println("YSDao.exeUpdate");
+		System.out.println("YSDao.updateAll");
 		
 		sqlSession.update("ysbook.updatemform",addressVo);
 		
 	}
+	
+	//수정하기-그룹리스트
+	public void categoryGroupAllList(AddressVo addressVo) {
+		System.out.println("YSDao.categoryGroupAllList");
+		
+		sqlSession.update("ysbook.categoryListmForm",addressVo);
+		
+	}
+	
+	
 }
