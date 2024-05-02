@@ -46,6 +46,7 @@
 			   gender
 		from address
 		where aNo!=0
+		order by name
 	]]>
 	</select>
 	
