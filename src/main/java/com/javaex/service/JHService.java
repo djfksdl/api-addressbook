@@ -14,6 +14,7 @@ public class JHService {
 	@Autowired
 	private JHDao jhDao;
 	
+	//그룹리스트
 	public List<AddressVo> exepersoninsertgruoptList() {
 		System.out.println("JHService.exepersoninsertgruoptList");
 		
@@ -23,12 +24,29 @@ public class JHService {
 		return persongroupList;
 	}
 	
-	public int exePersongroupinsert(AddressVo addressVo) {
-		System.out.println("JHService.exePersongroupinsert");
+	//등록
+	public void exePersonwriteinsert(AddressVo addressVo) {
+		System.out.println("JHService.exePersonwriteinsert");
 		
-		int count = jhDao.PersonGroupsinsert(addressVo);
+		jhDao.PersonAddresswrite(addressVo);
 		
-		return count;
+		if(addressVo.getGroupNoList().length <= 0) {
+			addressVo.setcNo(0);
+			jhDao.PersonGroupAllList(addressVo);
+			
+		}else {
+			for(int i = 0; i < addressVo.getGroupNoList().length; i++) {
+				addressVo.setcNo(addressVo.getGroupNoList()[i]);
+				jhDao.PersonGroupAllList(addressVo);
+			}
+		}
+		
+		
+		System.out.println(addressVo.getcNo());
+		
+		
 	}
+	
+	
 	
 }

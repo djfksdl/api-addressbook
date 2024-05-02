@@ -1,5 +1,7 @@
 package com.javaex.vo;
 
+import java.util.Arrays;
+
 public class AddressVo {
 	
 	//필드
@@ -13,6 +15,7 @@ public class AddressVo {
 	private String memo;
 	private boolean favorite;
 	private String cName;
+	private int[] groupNoList;
 	
 	//생성자
 	public AddressVo() {
@@ -45,6 +48,8 @@ public class AddressVo {
 		this.favorite = favorite;
 		this.cName = cName;
 	}
+	
+	
 
 	
 	//메소드-gs
@@ -128,12 +133,25 @@ public class AddressVo {
 		this.cName = cName;
 	}
 
-	//메소드-일반
+
+
+	public int[] getGroupNoList() {
+		return groupNoList;
+	}
+
+	public void setGroupNoList(int[] groupNoList) {
+		this.groupNoList = groupNoList;
+	}
+
 	@Override
 	public String toString() {
 		return "AddressVo [aNo=" + aNo + ", cNo=" + cNo + ", acNo=" + acNo + ", name=" + name + ", hp=" + hp
 				+ ", gender=" + gender + ", email=" + email + ", memo=" + memo + ", favorite=" + favorite + ", cName="
-				+ cName + "]";
+				+ cName + ", groupNoList=" + Arrays.toString(groupNoList) + "]";
 	}
+
+	
+
+	
 
 }

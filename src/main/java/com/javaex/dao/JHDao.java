@@ -23,12 +23,29 @@ public class JHDao {
 		
 	}
 	
-	public int PersonGroupsinsert(AddressVo addressVo) {
-		System.out.println("JHDao.PersonGroupsinsert");
+	public int PersonAddresswrite(AddressVo addressVo) {
+		System.out.println("JHDao.PersonAddresswrite");
 		
-		int count = sqlSession.insert("jhbook.insertpersongroup", addressVo);
+		int count = sqlSession.insert("jhbook.insertpersonaddress", addressVo);
 		
 		return count;
 	}
+	
+	public AddressVo WriteAddressNoSelect(int no) {
+		System.out.println("JHDao.WriteAddressNoSelect");
+		
+		
+		AddressVo addVo = sqlSession.selectOne("jhbook.SelectWriteAddressNo", no);
+		
+		return addVo;
+	}
+	
+	public void PersonGroupAllList(AddressVo addressVo) {
+		System.out.println("JHDao.PersonGroupAllList");
+		
+		sqlSession.insert("jhbook.addressgroupinsert", addressVo);
+	}
+	
+	
 	
 }

@@ -12,11 +12,27 @@
 		]]>
 	</select>
 	
-	<insert id="insertpersongroup" parameterType="com.javaex.vo.AddressVo">
+	<!-- 등록 및 불러오기 -->
+	<insert id="insertpersonaddress" parameterType="com.javaex.vo.AddressVo">
 		<![CDATA[
-			INSERT INTO address_category
-			VALUES (null,#{aNo},#{cNo})
+			insert address 
+			values(null,#{name},#{hp},#{gender},#{email},#{memo},false)
+		]]>
+		<selectKey keyProperty="aNo" resultType="int" order="AFTER">   
+          <![CDATA[
+            select last_insert_id()
+            ]]>
+      	</selectKey>
+	</insert>
+	
+	<!-- 등록 최종 -->
+	<insert id="addressgroupinsert" parameterType="com.javaex.vo.AddressVo">
+		<![CDATA[
+			insert address_category
+			values(null,#{aNo},#{cNo})
 		]]>
 	</insert>
+	
+
 
 </mapper>
