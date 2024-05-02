@@ -29,7 +29,7 @@
 	]]>
 	</select>
 	
-	<!-- 수정하기 -->
+	<!-- 수정하기-address table -->
 	<update id="updatemform" parameterType="com.javaex.vo.AddressVo">
 	<![CDATA[
 		update address  
@@ -39,6 +39,13 @@
 		    memo=#{memo}
 		where aNo=#{aNo}
 	]]>
+	</update>
+	
+	<!-- 수정하기-그룹리스트 -->
+	<update id="categoryListmForm" parameterType="com.javaex.vo.AddressVo">
+		update address_category  
+		set cNo=#{cNo}
+		where aNo=#{aNo}
 	</update>
 
 </mapper>
