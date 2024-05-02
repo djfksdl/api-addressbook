@@ -31,6 +31,11 @@ public class YSService {
 		
 		return mgList;
 		
-		
+	}
+	
+	//수정하기
+	public void exeUpdate(AddressVo addressVo) {
+		System.out.println("YSService.exeUpdate");
+		ysDao.updateAll(addressVo);
 	}
 }

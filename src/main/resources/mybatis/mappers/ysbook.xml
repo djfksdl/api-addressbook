@@ -28,5 +28,17 @@
 		where a.aNo=#{aNo}
 	]]>
 	</select>
+	
+	<!-- 수정하기 -->
+	<update id="updatemform" parameterType="com.javaex.vo.AddressVo">
+	<![CDATA[
+		update address  
+		set name=#{name} ,
+			hp=#{hp},
+		    email=#{email},
+		    memo=#{memo}
+		where aNo=#{aNo}
+	]]>
+	</update>
 
 </mapper>

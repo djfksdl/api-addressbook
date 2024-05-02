@@ -22,7 +22,6 @@ public class YSDao {
 		
 		return ysList;
 		
-		
 	}
 	
 	//수정폼- 한사람 정보 가져오기
@@ -32,5 +31,13 @@ public class YSDao {
 		List<AddressVo> mgList = sqlSession.selectList("ysbook.selectListByaNo", aNo);
 		
 		return mgList;
+	}
+	
+	//수정하기
+	public void updateAll(AddressVo addressVo) {
+		System.out.println("YSDao.exeUpdate");
+		
+		sqlSession.update("ysbook.updatemform",addressVo);
+		
 	}
 }
