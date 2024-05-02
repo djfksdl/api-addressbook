@@ -33,11 +33,11 @@ public class YSController {
 	public JsonResult ysGetVoByaNo(@PathVariable(value = "aNo")int aNo) {
 		System.out.println("YSController.ysGetVoByaNo");
 		
-		System.out.println("찍혀야함"+aNo);
+//		System.out.println("찍혀야함"+aNo);
 		
-		AddressVo mVo = ysService.exeVo(aNo);
-		System.out.println("여기 확인"+ mVo);
-		
-		return JsonResult.success(mVo);
+		List<AddressVo> mgList = ysService.exeVo(aNo);
+
+//		System.out.println("내가 찍은거:" + mgList);
+		return JsonResult.success(mgList);
 	}
 }

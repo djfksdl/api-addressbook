@@ -26,11 +26,11 @@ public class YSDao {
 	}
 	
 	//수정폼- 한사람 정보 가져오기
-	public AddressVo getInfoByaNo(int aNo) {
+	public List<AddressVo> getInfoByaNo(int aNo) {
 		System.out.println("YSDao.getInfoByaNo");
 		
-		AddressVo mVo = sqlSession.selectOne("ysbook.selectOneByaNo", aNo);
+		List<AddressVo> mgList = sqlSession.selectList("ysbook.selectListByaNo", aNo);
 		
-		return mVo;
+		return mgList;
 	}
 }

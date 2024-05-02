@@ -24,12 +24,12 @@ public class YSService {
 	}
 	
 	//수정폼- 한사람 정보 가져오기
-	public AddressVo exeVo(int aNo) {
+	public List<AddressVo> exeVo(int aNo) {
 		System.out.println("YSService.exeVo");
 		
-		AddressVo mVo = ysDao.getInfoByaNo(aNo);
+		List<AddressVo> mgList = ysDao.getInfoByaNo(aNo);
 		
-		return mVo;
+		return mgList;
 		
 		
 	}

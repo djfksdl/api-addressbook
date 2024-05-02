@@ -13,16 +13,19 @@
 	</select>
 	
 	<!-- 수정폼- 한사람 정보 가져오기 -->
-	<select id="selectOneByaNo" parameterType="int" resultType="com.javaex.vo.AddressVo">
+	<select id="selectListByaNo" parameterType="int" resultType="com.javaex.vo.AddressVo">
 	<![CDATA[
-		select aNo
+		select a.aNo
 			  ,name
 		      ,hp
 		      ,gender
 		      ,email
 		      ,memo
-		from address
-		where aNo=#{aNo}
+		      ,cName
+		from address a 
+		left join address_category ac on a.aNo = ac.aNo
+		left join category c on c.cNo = ac.cNo
+		where a.aNo=#{aNo}
 	]]>
 	</select>
 
