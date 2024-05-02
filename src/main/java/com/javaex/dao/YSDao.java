@@ -24,4 +24,13 @@ public class YSDao {
 		
 		
 	}
+	
+	//수정폼- 한사람 정보 가져오기
+	public AddressVo getInfoByaNo(int aNo) {
+		System.out.println("YSDao.getInfoByaNo");
+		
+		AddressVo mVo = sqlSession.selectOne("ysbook.selectOneByaNo", aNo);
+		
+		return mVo;
+	}
 }

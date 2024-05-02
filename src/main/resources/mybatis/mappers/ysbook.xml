@@ -11,5 +11,19 @@
 		where favorite=1
 	]]>
 	</select>
+	
+	<!-- 수정폼- 한사람 정보 가져오기 -->
+	<select id="selectOneByaNo" parameterType="int" resultType="com.javaex.vo.AddressVo">
+	<![CDATA[
+		select aNo
+			  ,name
+		      ,hp
+		      ,gender
+		      ,email
+		      ,memo
+		from address
+		where aNo=#{aNo}
+	]]>
+	</select>
 
 </mapper>

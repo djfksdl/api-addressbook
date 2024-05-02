@@ -35,8 +35,9 @@ public class YSController {
 		
 		System.out.println("찍혀야함"+aNo);
 		
-		ysService.exeVo();
+		AddressVo mVo = ysService.exeVo(aNo);
+		System.out.println("여기 확인"+ mVo);
 		
-		return JsonResult.success("야호");
+		return JsonResult.success(mVo);
 	}
 }
