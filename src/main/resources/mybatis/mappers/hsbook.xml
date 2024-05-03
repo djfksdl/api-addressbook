@@ -26,15 +26,17 @@
 	<!-- 상세정보 address 불러오기 -->
 	<select id="selectOneAddress" parameterType="int" resultType="com.javaex.vo.AddressVo">
 	<![CDATA[
-		select  aNo,
-				name,
-		        hp,
-		        gender,
-		        email,
-		        memo,
-		        favorite
-		from address
-		where aNo = #{aNo}
+		select a.aNo
+			  ,name
+		      ,hp
+		      ,email
+		      ,memo
+		      ,cName
+		      ,favorite
+		from address a 
+		left join address_category ac on a.aNo = ac.aNo
+		left join category c on c.cNo = ac.cNo
+		where a.aNo=#{aNo}
 	]]>
 	</select>
 

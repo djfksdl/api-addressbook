@@ -37,9 +37,10 @@ public class HSController {
 	public JsonResult getDetail(@PathVariable(value="aNo") int aNo) {
 		System.out.println("HSController.getDetail()");
 		
-		AddressVo addressVo = hsService.getDetail(aNo);
+		List<AddressVo> dList = hsService.getDetail(aNo);
 
-		return JsonResult.success(addressVo);
+		System.out.println("여기확인"+ dList);
+		return JsonResult.success(dList);
 	}
 	
 	//리스트 불러오기

@@ -34,12 +34,12 @@ public class HSDao {
 //	}
 	
 	//상세정보 불러오기
-	public AddressVo selectAddress(int aNo) {
+	public List<AddressVo> selectAddress(int aNo) {
 		System.out.println("HSDao.selectAddress()");
 		
-		AddressVo addressVo = sqlSession.selectOne("hsbook.selectOneAddress", aNo);
+		List<AddressVo> dList = sqlSession.selectList("hsbook.selectOneAddress", aNo);
 		
-		return addressVo;
+		return dList;
 	}
 	
 	//리스트
