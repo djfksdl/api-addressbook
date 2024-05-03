@@ -19,7 +19,9 @@ public class HSService {
 	public int addressDelete(int aNo) {
 		System.out.println("HSService.addressDelete()");
 		
+		hsDao.addressDelete2(aNo);
 		int count = hsDao.addressDelete(aNo);
+		
 		
 		return count;
 	}
