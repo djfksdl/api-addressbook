@@ -9,6 +9,8 @@
 			  ,name
 		from address
 		where favorite=1
+		and aNo != 0
+		order by name
 	]]>
 	</select>
 	

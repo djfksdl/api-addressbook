@@ -25,14 +25,14 @@ public class HSService {
 	}
 	
 	//한 명 선택 상세정보
-	public AddressVo getDetail(int aNo) {
+	public List<AddressVo> getDetail(int aNo) {
 		System.out.println("HSService.getDetail()");
 		
 		//(aNo, cNo, acNo, name, hp, gender, email, memo, favorite, cName)
 		// 1. 주소에 있는 정보 모두 가져오기
-		AddressVo addressVo = hsDao.selectAddress(aNo);
+		List<AddressVo> dList = hsDao.selectAddress(aNo);
 		
-		return addressVo;
+		return dList;
 	}
 	
 	
