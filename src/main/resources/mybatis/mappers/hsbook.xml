@@ -3,10 +3,17 @@
 <mapper namespace="hsbook">
 
 
-	<!-- 연락처 삭제 -->
+	<!-- 연락처 삭제1 -->
 	<delete id="deleteAddress" parameterType="int">
 	<![CDATA[
 		delete from address
+		where aNo = #{aNo};
+		]]>
+	</delete>
+	<!-- 연락처 삭제2 -->
+	<delete id="deleteAddress2" parameterType="int">
+	<![CDATA[
+		delete from address_category
 		where aNo = #{aNo};
 		]]>
 	</delete>

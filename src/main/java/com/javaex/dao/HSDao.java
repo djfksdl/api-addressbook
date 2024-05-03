@@ -15,7 +15,7 @@ public class HSDao {
 	private SqlSession sqlSession;
 	
 	
-	//연락처 삭제
+	//연락처 삭제1
 	public int addressDelete(int aNo) {
 		System.out.println("HSDao.addressDelete()");
 		
@@ -23,6 +23,14 @@ public class HSDao {
 		
 		return count;
 	}
+	//연락처 삭제2
+		public int addressDelete2(int aNo) {
+			System.out.println("HSDao.addressDelete2()");
+			
+			int count = sqlSession.delete("hsbook.deleteAddress2", aNo);
+			
+			return count;
+		}
 	
 //	//그룹 불러오기
 //	public List<AddressVo> selectGroup(int aNo) {
